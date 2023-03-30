@@ -1,0 +1,25 @@
+Sample fields from chat gpt
+
+Users
+id: unique identifier for the user
+name: name of the user
+email: email address of the user
+password: hashed password for the user
+phone: phone number of the user
+Vehicles
+id: unique identifier for the vehicle
+make: make of the vehicle (e.g., Toyota, Ford)
+model: model of the vehicle (e.g., Camry, Focus)
+license_plate: license plate number of the vehicle
+driver_id: foreign key referencing the id field of the Users table for the driver of the vehicle
+Routes
+id: unique identifier for the route
+start_location: starting location of the route
+end_location: ending location of the route
+stops: comma-separated list of stops along the route
+Bookings
+id: unique identifier for the booking
+user_id: foreign key referencing the id field of the Users table for the user who made the booking
+vehicle_id: foreign key referencing the id field of the Vehicles table for the vehicle that was booked
+route_id: foreign key referencing the id field of the Routes table for the route that the vehicle will take
+date_time: date and time of the booking

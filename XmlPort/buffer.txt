@@ -1,0 +1,48 @@
+
+XmlPort 50100 "Import Buffer"
+{
+    Format = VariableText;
+
+    schema
+    {
+        textelement(Root)
+        {
+            tableelement("Buffer Lines"; "Buffer Lines")
+            {
+                XmlName = 'BufferLines';
+                fieldattribute(HNo; "Buffer Lines"."Buffer Header No.")
+                {
+                }
+                fieldattribute(AccountNo; "Buffer Lines"."Account No.")
+                {
+                    FieldValidate = yes;
+                }
+                fieldattribute(Amount; "Buffer Lines".Amount)
+                {
+                }
+                fieldattribute(Staff; "Buffer Lines"."Staff No.")
+                {
+                    FieldValidate = yes;
+                }
+            }
+        }
+    }
+
+    requestpage
+    {
+
+        layout
+        {
+        }
+
+        actions
+        {
+        }
+    }
+
+    trigger OnPostXmlPort()
+    begin
+        Message('Buffer Uploaded Successfuly');
+    end;
+}
+
